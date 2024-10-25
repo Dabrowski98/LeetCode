@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class Solution
+    class LongestPalindromeClass
     {
         public string LongestPalindrome(string s)
         {
