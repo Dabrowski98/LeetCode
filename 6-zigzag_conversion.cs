@@ -8,24 +8,17 @@ namespace LeetCode
         {
             if (s.Length < 2 || numRows == 1) return s;
             string[] rows = new string[numRows];
-            StringBuilder result = new StringBuilder();
             int row = 0;
+            StringBuilder result = new StringBuilder();
 
             for (int i = 0; i < s.Length; i++)
             {
                 rows[row] = rows[row] + s[i].ToString();
-
-                if (i % ((2 * numRows) - 2) < numRows - 1)
-                {
-                    row++;
-                }
-                else { row--; }
+                row += (i % ((2 * numRows) - 2) < numRows - 1) ? 1 : -1;
             }
 
-            foreach (var rowString in rows)
-            {
-                result.Append(rowString);
-            }
+            foreach (var rowString in rows) result.Append(rowString);
+
             return result.ToString();
         }
     }
